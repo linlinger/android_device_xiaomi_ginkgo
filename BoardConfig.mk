@@ -145,6 +145,8 @@ TARGET_USES_MKE2FS := true
 TW_NO_SCREEN_TIMEOUT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
 TW_OVERRIDE_SYSTEM_PROPS := \
      "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
