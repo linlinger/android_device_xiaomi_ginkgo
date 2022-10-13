@@ -58,23 +58,23 @@ TO-DO:
 First checkout minimal twrp with omnirom tree:
 
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 repo sync
 ```
 
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/ginkgo" name="TeamWin/android_device_xiaomi_ginkgo" remote="github" revision="android-9.0" />
+<project path="device/xiaomi/ginkgo" name="twrp/android_device_xiaomi_ginkgo" remote="github" revision="android-12.1" />
 ```
 
 Finally execute these:
 
 ```
 . build/envsetup.sh
-lunch omni_ginkgo-eng
+lunch twrp_ginkgo-eng
 export ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-mka recocoveryimage
+mka recoveryimage
 ```
 
 To test it:
