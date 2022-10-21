@@ -25,18 +25,17 @@ load_ginkgo()
 
 variant=$(getprop ro.boot.hwc)
 echo $variant
-hwversion=$(getprop ro.boot.hwversion)
-echo $hwversion
 
 case $variant in
-    "Global_B")
-        case $hwversion in
-         "18.31.0"|"18.39.0"|"19.39.0")
-          load_willow
-         ;;
-    *)
+    "global_B")
+        load_willow
+        ;;
+    "global")
         load_ginkgo
-         ;;
+        ;;
+    *)
+        load_willow
+        ;;
 esac
 
 exit 0
