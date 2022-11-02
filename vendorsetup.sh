@@ -45,10 +45,16 @@
 	# 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
 	export OF_SCREEN_H=2340
 	export OF_STATUS_H=59
-	export OF_STATUS_INDENT_LEFT=90
-	export OF_STATUS_INDENT_RIGHT=90
+	export OF_STATUS_INDENT_LEFT=48
+	export OF_STATUS_INDENT_RIGHT=48
 	# 禁止禁用导航栏
 	export OF_ALLOW_DISABLE_NAVBAR=0
+	# 提供隐藏刘海选项
+	export OF_HIDE_NORCH=1
+	# 时钟位置选项（左右可选）
+	export OF_CLOCK_POS=1
+
+	export OF_USE_GREEN_LED=0
 
 	## 使刷机包兼容红米Note8/8t （不确认设备代号是否一致）
 	# 使一加5和一加5t都能刷入橙狐zip卡刷包
