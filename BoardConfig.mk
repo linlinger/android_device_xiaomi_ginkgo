@@ -47,7 +47,7 @@ TARGET_BOARD_PLATFORM := trinket
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 earlycon=msm_geni_serial,0x4a90000 loop.max_part=7 cgroup.memory=nokmem,nosocket androidboot.selinux=permissive androidboot.usbconfigfs=true
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 earlycon=msm_geni_serial,0x4a90000 loop.max_part=7 cgroup.memory=nokmem,nosocket androidboot.selinux=permissive androidboot.usbconfigfs=true androidboot.boot_devices=soc/4744000.sdhci
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -80,12 +80,23 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4831838208
+#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4831838208
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 52554612224
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_PARTITION_SIZE := 1610612736
+#BOARD_VENDORIMAGE_PARTITION_SIZE := 1610612736
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# Dynamic Partition
+BOARD_SUPER_PARTITION_BLOCK_DEVICES := vendor system
+BOARD_SUPER_PARTITION_METADATA_DEVICE := system
+BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE := 1610612736
+BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE := 4831838208
+BOARD_SUPER_PARTITION_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE) + $(BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE) )
+
+BOARD_SUPER_PARTITION_GROUPS := ginkgo_dynamic_partition
+BOARD_GINKGO_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
+BOARD_GINKGO_DYNPART_PARTITION_LIST := system vendor
 
 # System as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
@@ -115,6 +126,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 #TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
+TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
