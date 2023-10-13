@@ -99,8 +99,8 @@ BOARD_SUPER_PARTITION_GROUPS := ginkgo_dynamic_partition
 BOARD_GINKGO_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
 BOARD_GINKGO_DYNPART_PARTITION_LIST := system vendor
 
-# System as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+# Disable this when using Dynamic partition
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
