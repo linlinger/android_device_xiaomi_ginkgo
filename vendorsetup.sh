@@ -40,7 +40,7 @@
 	# 移除 AromaFM
 	export FOX_DELETE_AROMAFM="1"
 	# 添加 备选设备
-	export TARGET_DEVICE_ALT="willow"
+	export TARGET_DEVICE_ALT="ginkgo,willow"
 
 	export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
 	export OF_USE_MAGISKBOOT=1
