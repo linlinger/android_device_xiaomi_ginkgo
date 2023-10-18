@@ -91,7 +91,7 @@ BOARD_SUPER_PARTITION_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_VENDOR_DEVICE
 BOARD_SUPER_PARTITION_GROUPS := ginkgo_dynpart
 BOARD_GINKGO_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
 BOARD_GINKGO_DYNPART_PARTITION_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
-BOARD_GINKGO_DYNPART_PARTITION_LIST := system system_ext product vendor odm
+BOARD_GINKGO_DYNPART_PARTITION_LIST := system system_ext system_root product vendor odm
 
 # Disable this when using Dynamic partition
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
