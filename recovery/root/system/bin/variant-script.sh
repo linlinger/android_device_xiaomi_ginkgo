@@ -33,6 +33,9 @@ case $variant in
     "global")
         load_ginkgo
         ;;
+    "CN")
+        load_ginkgo
+        ;;
     *)
         load_willow
         ;;
