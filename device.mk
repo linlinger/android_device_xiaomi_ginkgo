@@ -1,7 +1,12 @@
-# Api
+# API
 PRODUCT_SHIPPING_API_LEVEL := 28
 
-# qcom decryption
+
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
+# QCOM decryption
 PRODUCT_PACKAGES_ENG += \
     qcom_decrypt \
     qcom_decrypt_fbe
