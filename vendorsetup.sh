@@ -61,9 +61,6 @@
 	export FOX_REMOVE_AAPT=1
 	export OF_ADVANCED_SECURITY=1
 
-
-	## 硬件功能设定
-
 	## 界面显示设定
 	# 设置屏幕高度，状态栏高度，状态栏左右边距
 	# 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
@@ -79,11 +76,6 @@
 	export OF_CLOCK_POS=1
 
 	export OF_USE_GREEN_LED=0
-
-	## 使刷机包兼容红米Note8/8t （不确认设备代号是否一致）
-	# 使一加5和一加5t都能刷入橙狐zip卡刷包
-	export TARGET_DEVICE_ALT="ginkgo"
-
 
 	# 手动刷入OTA增量包时尝试进入OpenRecoveryScript模式完成更新
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
