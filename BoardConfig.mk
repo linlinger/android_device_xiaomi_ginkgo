@@ -88,7 +88,7 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 1610612736
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # System as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # File systems
@@ -98,10 +98,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_ginkgo
-TARGET_RECOVERY_DEVICE_MODULES := libinit_ginkgo
 
 # Encryption
 BOARD_USES_METADATA_PARTITION := true
@@ -156,7 +152,7 @@ TW_FORCE_KEYMASTER_VER := true
 
 #Properties
 TW_OVERRIDE_SYSTEM_PROPS := \
-     "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+    "ro.build.date.utc;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental"
 
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
