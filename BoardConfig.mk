@@ -149,6 +149,7 @@ TW_EXCLUDE_BASH := true
 TW_EXCLUDE_PYTHON := true
 TW_FRAMERATE := 60
 TW_FORCE_KEYMASTER_VER := true
+TW_BACKUP_EXCLUSIONS := /data/adb/ksu/modules.img
 
 #Properties
 TW_OVERRIDE_SYSTEM_PROPS := \
