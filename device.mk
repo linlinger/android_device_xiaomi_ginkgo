@@ -4,6 +4,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Api
 PRODUCT_SHIPPING_API_LEVEL := 28
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # qcom decryption
 PRODUCT_PACKAGES_ENG += \
     qcom_decrypt \
