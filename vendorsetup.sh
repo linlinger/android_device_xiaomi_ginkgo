@@ -60,6 +60,7 @@
 	export OF_PATCH_AVB20=1
 	export FOX_REMOVE_AAPT=1
 	export OF_ADVANCED_SECURITY=1
+	export OF_DEFAULT_KEYMASTER_VERSION=4.0
 
 	## 界面显示设定
 	# 设置屏幕高度，状态栏高度，状态栏左右边距
