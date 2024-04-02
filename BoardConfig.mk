@@ -188,3 +188,13 @@ TW_OVERRIDE_SYSTEM_PROPS := \
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# PBRP specific build flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
+
+# PB Torch
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+
+# Maintainer info
+MAINTAINER := "linlinger"
