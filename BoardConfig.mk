@@ -198,4 +198,4 @@ PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
 
 # Maintainer info
-MAINTAINER := "linlinger"
+MAINTAINER := linlinger
