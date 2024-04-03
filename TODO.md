@@ -1,0 +1,1 @@
+# Need a kernel support erofs and without two-stage init. I'm too lazy to do that.Go and check my kernel,revert dts change and compile . Replace the kernel and dtbo. It will be fine
