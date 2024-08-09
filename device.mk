@@ -1,6 +1,16 @@
 # Api
 PRODUCT_SHIPPING_API_LEVEL := 28
 
+ifeq ($(GINKGO_DYNAMIC), true)
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
+# fastbootd
+PRODUCT_PACKAGES += \
+	fastbootd
+endif
+
 # qcom decryption
 PRODUCT_PACKAGES_ENG += \
     qcom_decrypt \
